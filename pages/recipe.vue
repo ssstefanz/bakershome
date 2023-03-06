@@ -18,28 +18,39 @@
                 </ul>
             </div>
         </article>
-        <article class="nutrition-bar">
-            
+        <article class="recipe__wrap" v-if="nutritionFacts">
+            <!-- hidden nutrition facts which link nutrition prop to Nfacts data, toggled with the button -->
+            <div class="recipe__hide-wrap" v-if="!show">
+                <Nutrition
+                    :nutrition="nutritionFacts"
+                ></Nutrition>
+            </div>
+            <div class="recipe__button-wrap">
+                <button class="recipe__button" @click="buttonText" ref="buttonToggle">Nutrition Facts</button>
+            </div>
+
         </article>
 
     </main>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
+import Nutrition from '@/components/nutrition.vue';
+import buttonText from '@/components/mixins.vue';
 
 export default {
     name: 'app',
     components: {
-
+        Nutrition
     },
+    mixins: [buttonText],
     data () {
       return {
         // data for the recipes
         loading: true,
-        info: null,
+        nutritionFacts: null,
         errored: false,
-        weight: '100',
         recipes: [
           {
             title: "Seeded Rye Sourdough Boule",
@@ -47,7 +58,7 @@ export default {
             imgtext: "a loaf of sourdough bread, photographed from above",
             intro: "A 20% rye flour sourdough loaf, filled with seeds.",
             ingredients: [
-                "500 grams bread flour", 
+                "400 grams bread flour", 
                 "100 grams rye flour",
                 "375 grams water",
                 "100 grams leaven",
@@ -73,8 +84,8 @@ export default {
             title: this.recipes[0].title,
             ingr: this.recipes[0].ingredients
         })
-        .then(response => console.log(response))
-        .then(console.log(this.recipes[0].ingredients))
+        // .then(response => console.log(response))
+        .then(response => this.nutritionFacts = response.data)
         .catch(error => {
             console.error(error)
             this.errored = true 
@@ -83,4 +94,5 @@ export default {
     }
 }
 </script>
+
 

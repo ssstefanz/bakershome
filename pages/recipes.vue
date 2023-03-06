@@ -6,13 +6,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12 p-5">
-            <article class="card">
-              <nuxt-link class="card__recipe" to="/recipe">
-                <h3 class="card__title">Today's Recipe</h3>
-                <h4 class="card__subtitle">Seeded Rye Sourdough Boule</h4>
-                <img class="card__img" src="@/assets/bread-2.jpeg" alt="bread goes here">
-              </nuxt-link>
-            </article>
+            <TodayRecipe></TodayRecipe>
           </div>
         </div>
 
@@ -54,11 +48,17 @@
 </template>
 
 <script>
-   export default {
+import buttonText from '@/components/mixins.vue';
+import TodayRecipe from '@/components/TodayRecipe.vue'
+
+export default {
     name: 'app',
+    components: [
+      TodayRecipe
+    ],
+    mixins: [buttonText],
     data () {
       return {
-        show: true,
 
         // data for base and extra recipes
         baseRecipes: [
@@ -93,13 +93,6 @@
             link: "#"
           }
         ]
-      }
-    },
-    methods: {
-      // button to show/hide recipes and change the button text
-      buttonText: function () {
-        this.show = !this.show;
-        this.$refs.buttonToggle.innerText = this.show?'See More':'Hide Recipes';
       }
     }
   }

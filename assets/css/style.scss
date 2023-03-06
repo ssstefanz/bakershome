@@ -175,19 +175,29 @@ header {
     align-items: center;
   }
 
+  &__adjust {
+    background-color: $bkg-black;
+    border-color: $background-beige;
+    color: $background-beige;
+    border-radius: 5px;
+    
+  }
+
   // call create-button mixin to build two buttons for the timer
   &__a-button, 
   &__s-button {
     @include create-button;
-
     width: 70%;
 
-    // responsive breakpoint
+    // responsive breakpoints
+    @include media-query(small) {
+      width: 90%;
+    }
     @include media-query(tiny) {
       width: 100%;
     }
-
   }
+
 }
 
 // style the recipe card
@@ -354,6 +364,14 @@ header {
   &__stepnum {
     font-weight: bold;
   }
+  &__button {
+    @include create-button;
+  }
+
+  &__button-wrap {
+    display:flex;
+    justify-content: center;
+  }
 }
 
 // footer styling
@@ -399,6 +417,17 @@ header {
 
   &__text {
     padding-left: 1rem;
+  }
+}
+
+.nutrition {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-height: 40rem;
+  &__item {
+    margin: 0rem;
+    padding-top: .5rem;
   }
 }
 

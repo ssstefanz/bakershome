@@ -1,15 +1,16 @@
 <script>
-//toggle mixin
 export default {
-    data() {
-        return {
-            isActive: false
+    data () {
+        return{
+            show: true
         }
     },
     methods: {
-        toggleShow() {
-            this.isActive = !this.isActive;
-        }
+      // button to show/hide recipes and change the button text
+      buttonText: function () {
+        this.show = !this.show;
+        this.$refs.buttonToggle.innerText = this.show?"See More":"Hide";
+      }
     }
-};
+}
 </script>
