@@ -180,6 +180,7 @@ header {
     border-color: $background-beige;
     color: $background-beige;
     border-radius: 5px;
+    text-align: right;
     
   }
 
@@ -187,6 +188,11 @@ header {
   &__a-button, 
   &__s-button {
     @include create-button;
+  }
+
+  &__a-button, 
+  &__s-button, &__adjust {
+
     width: 70%;
 
     // responsive breakpoints
