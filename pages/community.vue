@@ -4,6 +4,7 @@
     <main class="main">
       <!-- image carousel with three images and controls -->
       <h3>Community Bread Gallery</h3>
+      <div class="com__wrap">
         <b-carousel
           id="carousel-1"
           v-model="slide"
@@ -16,18 +17,21 @@
           style="text-shadow: 1px 1px 2px #333;"
           @sliding-start="onSlideStart"
           @sliding-end="onSlideEnd"
+          class="com__carousel"
         >
           <!-- picture component, looping through array of images -->
-          <Picture 
-            v-for="(pic, index) in pics" 
-            :key="index" 
-            :picture="pic.image" 
-            :alt-text="pic.text"
-            :img-title="pic.title"
-            :class="{ active: index === 0}"
-          >
-          </Picture>
+          
+            <Picture 
+              v-for="(pic, index) in pics" 
+              :key="index" 
+              :picture="pic.image" 
+              :alt-text="pic.text"
+              :img-title="pic.title"
+              :class="{ active: index === 0}"
+            >
+            </Picture>
         </b-carousel>
+      </div>
     </main>
   </div>
 </template>

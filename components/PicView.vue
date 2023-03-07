@@ -1,7 +1,7 @@
 <!-- picture component built with props -->
 <template>
     <b-carousel-slide 
-        class="picture" 
+        class="com__pic" 
         :img-src="require('@/assets/' + picture)" 
     >
         <h5>{{ imgTitle }}</h5>

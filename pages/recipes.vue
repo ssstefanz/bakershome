@@ -53,9 +53,9 @@ import TodayRecipe from '@/components/TodayRecipe.vue'
 
 export default {
     name: 'app',
-    components: [
+    components: {
       TodayRecipe
-    ],
+    },
     mixins: [buttonText],
     data () {
       return {

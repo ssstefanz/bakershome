@@ -1,19 +1,19 @@
 <template>
     <main id="app">
-        <article class="recipe__wrap" v-for="recipe in recipes">
+        <article class="recipe__wrap" v-for="(recipe, index) in recipes" :key="index">
             <h3 class="recipe__title">{{ recipe.title }}</h3>
             <img :src="require('@/assets/' + recipe.image)" :alt="recipe.imgtext" class="recipe__image">
-
+            
             <p class="recipe__intro">{{ recipe.intro }}</p>
             <div class="recipe__iwrap">
                 <h6 class="recipe__subtitle">Ingredients</h6>
-                <ul class="recipe__ilist" v-for="ingredient in recipe.ingredients">
+                <ul class="recipe__ilist" v-for="(ingredient, index) in recipe.ingredients" :key="index">
                     <li class="recipe__ingredient">{{ ingredient }}</li>
                 </ul>
             </div>
             <div class="recipe__stepswrap">
                 <h6 class="recipe__subtitle">Instructions</h6>
-                <ul class="recipe__steplist" v-for="(instruction, index) in recipe.instructions" >
+                <ul class="recipe__steplist" v-for="(instruction, index) in recipe.instructions" :key="index">
                     <li class="recipe__step"><span class="recipe__stepnum">Step {{ (index + 1) + ' ' }}</span> <br> {{ instruction }}</li>
                 </ul>
             </div>

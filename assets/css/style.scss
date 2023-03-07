@@ -401,9 +401,19 @@ header {
 }
 
 // community pg style
-.imgborder {
-  border: 5px solid $border-salmon;
-  width: 100%;
+.com {
+
+  &__wrap {
+    padding: 2rem;
+  }
+
+  &__pic {
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: scale-down;
+    object-position: center;
+  }
+
 }
 
 //faq pg style

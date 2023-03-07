@@ -24,11 +24,11 @@ import TodayRecipe from '@/components/TodayRecipe.vue'
 
     export default {
     name: 'app',
-    components: [
+    components: {
       Calculator,
       Timer,
       TodayRecipe
-    ]
+    }
     
 }
 </script>
