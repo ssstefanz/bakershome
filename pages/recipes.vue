@@ -94,6 +94,19 @@ export default {
           }
         ]
       }
+    },
+    head () {
+      return {
+        titleTemplate: 'Recipes — %s',
+        meta: [
+          {
+            hid: 'description', 
+            name: 'description',
+            content: "A library of bread recipes."
+        }
+
+        ]
+      }
     }
   }
 </script>

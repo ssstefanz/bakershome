@@ -91,6 +91,19 @@ export default {
             this.errored = true 
         })
         .finally(() => this.loading = false)
+    },
+    head () {
+      return {
+        titleTemplate: this.recipes[0].title + ' — %s',
+        meta: [
+          {
+            hid: 'description', 
+            name: 'description',
+            content: this.recipes[0].intro
+        }
+
+        ]
+      }
     }
 }
 </script>

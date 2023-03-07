@@ -33,6 +33,19 @@
           } 
         ]
       }
+    },
+    head () {
+      return {
+        titleTemplate: 'Frequently Asked Questions — %s',
+        meta: [
+          {
+            hid: 'description', 
+            name: 'description',
+            content: "How to use this site, explained."
+        }
+
+        ]
+      }
     }
   }
 </script>

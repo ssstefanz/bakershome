@@ -71,6 +71,19 @@
       onSlideEnd(slide) {
         this.sliding = false
       }
+    },
+    head () {
+      return {
+        titleTemplate: 'Community Images — %s',
+        meta: [
+          {
+            hid: 'description', 
+            name: 'description',
+            content: "Users post photographs of bread."
+        }
+
+        ]
+      }
     }
   }
 </script>

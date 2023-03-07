@@ -1,14 +1,14 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'bakers-home',
+    title: "Baker's Home",
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: "A site for people to learn to make sourdough bread, with a baker's timer, dough calculator, and recipes."},
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
