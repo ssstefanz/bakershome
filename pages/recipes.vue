@@ -37,7 +37,7 @@
 
             <!-- button that hides or shows more recipes -->
             <div class="recipes__button-wrap">
-              <button class="recipes__button" @click="buttonText" ref="buttonToggle">See More</button>
+              <button class="recipe__button" @click="buttonText('See More Recipes', 'Hide Recipes')" ref="buttonToggle">See More Recipes</button>
             </div>
           </div>
         </div>

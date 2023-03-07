@@ -26,7 +26,7 @@
                 ></Nutrition>
             </div>
             <div class="recipe__button-wrap">
-                <button class="recipe__button" @click="buttonText" ref="buttonToggle">Nutrition Facts</button>
+                <button class="recipe__button" @click="buttonText('Nutrition Facts', 'Hide Nutrition Facts')" ref="buttonToggle">Nutrition Facts</button>
             </div>
 
         </article>
@@ -42,7 +42,7 @@ import buttonText from '@/components/mixins.vue';
 export default {
     name: 'app',
     components: {
-        Nutrition
+        Nutrition,
     },
     mixins: [buttonText],
     data () {
